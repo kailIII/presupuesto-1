@@ -116,6 +116,11 @@ budget_app_urlpatterns += url_patterns('budget_app.views',
     url(r'^programas/(?P<id>[0-9A-Z]+)_funding\.(?P<format>.+)$', 'funding_programme_breakdown'),
     url(r'^programas/(?P<id>[0-9A-Z]+)_institutional\.(?P<format>.+)$', 'institutional_programme_breakdown'),
 
+    # Programmes
+    url(r'^subprogramas/(?P<id>[0-9A-Z]+)_economic\.(?P<format>.+)$', 'economic_subprogramme_breakdown'),
+    url(r'^subprogramas/(?P<id>[0-9A-Z]+)_funding\.(?P<format>.+)$', 'funding_subprogramme_breakdown'),
+    url(r'^subprogramas/(?P<id>[0-9A-Z]+)_institutional\.(?P<format>.+)$', 'institutional_subprogramme_breakdown'),
+
     # Articles
     url(r'^articulos/(?P<id>[0-9]+)_functional\.(?P<format>.+)$', 'functional_article_expenditures_breakdown'),
     url(r'^articulos/(?P<id>[0-9]+)_economic_revenues\.(?P<format>.+)$', 'economic_article_revenues_breakdown'),
@@ -136,6 +141,7 @@ budget_app_urlpatterns += url_patterns('budget_app.views',
     # Entity income/expenses
     url(r'^(?P<level>.+)_(?P<slug>.+)_gastos\.(?P<format>.+)$', 'entity_expenses'),
     url(r'^(?P<level>.+)_(?P<slug>.+)_gastosf\.(?P<format>.+)$', 'entity_functional'),
+    url(r'^(?P<level>.+)_(?P<slug>.+)_gastosi\.(?P<format>.+)$', 'entity_institutional'),
     url(r'^(?P<level>.+)_(?P<slug>.+)_ingresos\.(?P<format>.+)$', 'entity_income'),
 
     url(r'^(?P<level>.+)_(?P<slug>.+)_gastosf_(?P<id>[0-9]+)\.(?P<format>.+)$', 'entity_article_functional'),
